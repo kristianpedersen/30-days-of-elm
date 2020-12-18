@@ -2,7 +2,7 @@
 
 Start date: December 17th 2020
 
-Read updates here: [30 days of Elm @ dev.to](https://dev.to/kristianpedersen/30-days-of-elm-intro-2lo2)
+Each repo has a readme file, but I recommend checking out the comments here: [30 days of Elm @ dev.to](https://dev.to/kristianpedersen/30-days-of-elm-intro-2lo2)
 
 ## About this challenge
 Hi! My name is Kristian. 
