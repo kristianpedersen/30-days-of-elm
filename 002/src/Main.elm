@@ -26,10 +26,4 @@ update msg model =
 
 view : Model -> Html msg
 view model =
-    div [] (List.map (\person -> div [] [ person ]) model.listOfPeople)
-
-
-
--- view : Model -> Html msg
--- view model =
---     div [] (List.map (\person -> div [] [ text person ]) model.listOfPeople)
+    div [] (List.map (\person -> div [] [ text person ]) model.listOfPeople)
