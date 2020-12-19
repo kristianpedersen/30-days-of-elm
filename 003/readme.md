@@ -52,9 +52,7 @@ view model =
 
 Arkham had this to say:
 
-```
-Generating random values is impure, and therefore requires to send a Cmd to the elm runtime.
-```
+> Generating random values is impure, and therefore requires to send a Cmd to the elm runtime.
 
 https://guide.elm-lang.org/effects/random.html
 
@@ -100,9 +98,8 @@ I still need to re-read the [previous comment by bukkfrig](https://dev.to/bukkfr
 
 New from yesterday is the `subscriptions` field. What am I subscribed to? Nothing, apparently:
 
-```
-The other new thing in this program is the subscription function. It lets you look at the Model and decide if you want to subscribe to certain information. In our example, we say Sub.none to indicate that we do not need to subscribe to anything, but we will soon see an example of a clock where we want to subscribe to the current time!
-```
+> The other new thing in this program is the subscription function. It lets you look at the Model and decide if you want to subscribe to certain information. In our example, we say Sub.none to indicate that we do not need to subscribe to anything, but we will soon see an example of a clock where we want to subscribe to the current time!
+
 Taken from https://guide.elm-lang.org/effects/http.html
 
 Subscriptions seem to be required for `Browser.element`, so I'm not going to worry too much about them for now: https://package.elm-lang.org/packages/elm/browser/latest/Browser#element
@@ -201,9 +198,8 @@ That was a lot of work just to get some random boolean values, right?
 
 However, according to the documentation, many find this approach advantageous:
 
-```
-... once people become familiar with generators, they often report that it is easier than the traditional imperative APIs for most cases. For example, jump to the docs for Random.map4 for an example of generating random quadtrees and think about what it would look like to do that in JavaScript!
-```
+>... once people become familiar with generators, they often report that it is easier than the traditional imperative APIs for most cases. For example, jump to the docs for Random.map4 for an example of generating random quadtrees and think about what it would look like to do that in JavaScript!
+
 - From [elm/random, Mindset Shift](https://package.elm-lang.org/packages/elm/random/latest)
 
 ## 5. Subscriptions
