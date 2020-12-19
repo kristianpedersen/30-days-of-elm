@@ -11,6 +11,8 @@ The next 30 days, I'm going to teach myself the basics of Elm.
 
 My goal is to make something new every day with Elm. Even the simplest things count.
 
+I was inspired to do this project after seeing Lars Lillo Ulvestad do 100 days of Haskell: https://twitter.com/larsparsfromage
+
 ## Background
 
 I've been writing JavaScript on and off since 2016, and I started learning React in November 2020.
