@@ -1,8 +1,8 @@
 module Main exposing (Model, init, main, update, view)
 
 import Browser
-import Html exposing (Html, button, div, h1, input, p, span, text)
-import Html.Attributes exposing (checked, type_)
+import Html exposing (Html, button, div, input, text)
+import Html.Attributes exposing (checked, style, type_)
 import Html.Events exposing (onClick)
 import Random
 import Random.Extra
@@ -36,6 +36,10 @@ init _ =
     ( { grid = [ [ True ] ] }, getGridValues )
 
 
+
+-- Update
+
+
 type Msg
     = RequestToElmRuntime
     | ResponseFromElmRuntime (List (List Bool))
@@ -56,15 +60,37 @@ update msg model =
             ( { model | grid = theNewValues }, Cmd.none )
 
 
+
+-- Subscriptions (none)
+
+
 subscriptions : Model -> Sub Msg
 subscriptions model =
     Sub.none
 
 
+
+-- View
+
+
+convertBoolsToInputs : List Bool -> List (Html Msg)
+convertBoolsToInputs elements =
+    List.map (\boolValue -> input [ checked boolValue, type_ "checkbox" ] []) elements
+
+
+createGrid : Model -> List (Html Msg)
+createGrid model =
+    List.map (\row -> div [] (convertBoolsToInputs row)) model.grid
+
+
 view : Model -> Html Msg
 view model =
-    div []
-        [ button [ onClick RequestToElmRuntime ] [ text "Toggle randomly" ]
-        , div [] (List.map (\row -> div [] (List.map (\col -> span [] [ input [ checked col, type_ "checkbox" ] [] ]) row)) model.grid)
-        , h1 [] [ text "Second attempt:" ]
+    div [ style "padding" "1rem" ]
+        [ button
+            [ onClick RequestToElmRuntime
+            , style "padding" "1rem"
+            , style "margin-bottom" "1rem"
+            ]
+            [ text "Haha checkboxes go brrr" ]
+        , div [] (createGrid model)
         ]
