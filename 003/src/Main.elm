@@ -1,7 +1,7 @@
 module Main exposing (Model, init, main, update, view)
 
 import Browser
-import Html exposing (Html, button, div, input, p, span, text)
+import Html exposing (Html, button, div, h1, input, p, span, text)
 import Html.Attributes exposing (checked, type_)
 import Html.Events exposing (onClick)
 import Random
@@ -27,28 +27,33 @@ main =
 
 
 type alias Model =
-    { grid : Bool
+    { grid : List (List Bool)
     }
 
 
 init : () -> ( Model, Cmd Msg )
 init _ =
-    ( { grid = True }, Cmd.none )
+    ( { grid = [ [ True ] ] }, getGridValues )
 
 
 type Msg
-    = HeyElmGiveRandomBoolPlease
-    | NewBoolFromElmRuntime Bool
+    = RequestToElmRuntime
+    | ResponseFromElmRuntime (List (List Bool))
+
+
+getGridValues : Cmd Msg
+getGridValues =
+    Random.generate ResponseFromElmRuntime (Random.list 10 (Random.list 10 Random.Extra.bool))
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        HeyElmGiveRandomBoolPlease ->
-            ( model, Random.generate NewBoolFromElmRuntime Random.Extra.bool )
+        RequestToElmRuntime ->
+            ( model, getGridValues )
 
-        NewBoolFromElmRuntime newBoolValue ->
-            ( { model | grid = newBoolValue }, Cmd.none )
+        ResponseFromElmRuntime theNewValues ->
+            ( { model | grid = theNewValues }, Cmd.none )
 
 
 subscriptions : Model -> Sub Msg
@@ -59,6 +64,7 @@ subscriptions model =
 view : Model -> Html Msg
 view model =
     div []
-        [ button [ onClick HeyElmGiveRandomBoolPlease ] [ text "Toggle randomly" ]
-        , input [ type_ "checkbox", checked model.grid ] []
+        [ button [ onClick RequestToElmRuntime ] [ text "Toggle randomly" ]
+        , div [] (List.map (\row -> div [] (List.map (\col -> span [] [ input [ checked col, type_ "checkbox" ] [] ]) row)) model.grid)
+        , h1 [] [ text "Second attempt:" ]
         ]
