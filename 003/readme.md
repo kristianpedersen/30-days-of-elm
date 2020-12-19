@@ -1,6 +1,6 @@
 This is day 3 of my [30 day Elm challenge](https://dev.to/kristianpedersen/30-days-of-elm-intro-2lo2)
 
-Today I'm making a 10x10 grid of checkboxes, which will be randomly toggled when I click a button.
+Today I'm making a 10x10 grid of checkboxes, which will be randomly checked when I click a button.
 
 I started out by prototyping it in React. Turns out it's really fun to watch random checkboxes!
 
@@ -29,6 +29,7 @@ export default function App() {
 
 1. Working with random values in Elm is very different from anything else I've tried. Expect to be confused.
 2. That feeling when the compiler doesn't show any errors is great! I can't say the same for React.
+3. Tomorrow's project will be simpler than this one. Phew! :)
 
 [Skip to full Elm code example](#7-closing-thoughts-and-code)
 
