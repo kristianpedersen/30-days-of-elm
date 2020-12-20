@@ -8,6 +8,12 @@ Repo: [https://github.com/kristianpedersen/30-days-of-elm](https://github.com/kr
 2. [HTML element for each item in list](https://dev.to/kristianpedersen/30daysofelm-day-2-html-element-for-each-item-in-list-3d20)
 3. [Random checkbox grid](https://dev.to/kristianpedersen/30daysofelm-day-3-random-checkbox-grid-29j5)
 
+Test:
+
+1. [Value from range slider in p tag](/001-show-slider-value-in-p-tag)
+2. [HTML element for each item in list](/002-html-element-for-each-list-item)
+3. [Random checkbox grid](/003-random-checkbox-grid)
+
 *(Edit December 20th 2020: Added section about motivation and ambition)*
 
 ## About this challenge
