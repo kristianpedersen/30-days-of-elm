@@ -2,7 +2,7 @@
 
 Start date: December 17th 2020
 
-## Blog posts
+## Blog posts @ dev.to
 
 1. [Range slider value in p tag](https://dev.to/kristianpedersen/30-days-of-elm-1-30-show-range-slider-value-in-p-tag-jdb)
 2. [HTML element for each item in list](https://dev.to/kristianpedersen/30daysofelm-day-2-html-element-for-each-item-in-list-3d20)
