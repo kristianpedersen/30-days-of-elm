@@ -54,6 +54,10 @@ import Browser
 import Html exposing (Html, div, input, p, text)
 import Html.Attributes exposing (checked, type_)
 import Html.Events exposing (onCheck)
+
+main : Program () Model Msg
+main =
+    Browser.sandbox { init = init, update = update, view = view }
 ```
 
 If you know JavaScript, you might have expected to see a `change` event, but Elm calls it `onCheck`, which sounds a lot nicer.
