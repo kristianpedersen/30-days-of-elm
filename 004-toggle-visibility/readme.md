@@ -86,7 +86,7 @@ This could even have been as simple as:
 init = False
 ```
 
-... but having it as a record makes it easier to add more fields later though. Also, the type annotations tend to result in better error messages.
+... but having it as a record makes it easier to add more fields later. Also, the type annotations tend to result in better error messages.
 
 ## 3. Update
 
