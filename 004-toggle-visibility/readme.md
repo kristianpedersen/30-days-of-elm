@@ -1,5 +1,9 @@
 This is day 4 of my [30 day Elm challenge](https://dev.to/kristianpedersen/30-days-of-elm-intro-2lo2)
 
+Code: https://github.com/kristianpedersen/30-days-of-elm/blob/main/004-toggle-visibility/src/Main.elm
+
+Demo: https://kristianpedersen.github.io/30-days-of-elm/004-toggle-visibility/
+
 My only goal today was to publish my three previous Elm projects as interactive web pages - not just their source code.
 
 This was super easy!
