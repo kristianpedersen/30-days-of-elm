@@ -1,5 +1,9 @@
 # 1/30: Show input value in p tag
 
+Code: https://github.com/kristianpedersen/30-days-of-elm/blob/main/001-show-slider-value-in-p-tag/src/Main.elm
+
+Demo: https://kristianpedersen.github.io/30-days-of-elm/001-show-slider-value-in-p-tag/
+
 ## My elm experience before today
 
 I've gone through the Elm intro course on Frontend Masters, but I really don't learn much from following along.

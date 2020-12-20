@@ -1,5 +1,9 @@
 # 2/30 Return HTML for each list item
 
+Code: https://github.com/kristianpedersen/30-days-of-elm/blob/main/002-html-element-for-each-list-item/src/Main.elm
+
+Demo: https://kristianpedersen.github.io/30-days-of-elm/002-html-element-for-each-list-item/
+
 This is day 2 of my [30 day Elm challenge](https://dev.to/kristianpedersen/30-days-of-elm-intro-2lo2)
 
 In today's project, I want to display a p tag for each item in an array. No for loops!
