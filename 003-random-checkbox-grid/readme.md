@@ -131,7 +131,7 @@ init : () -> ( Model, Cmd Msg )
 init _ =
     ( { grid = [ [ True ] ] }, getGridValues )
 ```
-The parantheses were [explained to me yesterday by bukkfrig](https://dev.to/bukkfrig/comment/19b0m), but I'm not entirely sure about the underscore `_`. I'll re-visit that another day.
+The parentheses were [explained to me yesterday by bukkfrig](https://dev.to/bukkfrig/comment/19b0m), but I'm not entirely sure about the underscore `_`. I'll re-visit that another day.
 
 `Cmd Msg` was one of today's new concepts. I read a bit about it here:
 * https://guide.elm-lang.org/effects/
