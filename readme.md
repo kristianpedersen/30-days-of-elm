@@ -2,12 +2,7 @@
 
 Start date: December 17th 2020
 
-## Blog posts @ dev.to
-
-1. [Range slider value in p tag](https://dev.to/kristianpedersen/30-days-of-elm-1-30-show-range-slider-value-in-p-tag-jdb)
-2. [HTML element for each item in list](https://dev.to/kristianpedersen/30daysofelm-day-2-html-element-for-each-item-in-list-3d20)
-3. [Random checkbox grid](https://dev.to/kristianpedersen/30daysofelm-day-3-random-checkbox-grid-29j5)
-4. [Toggle visibility](https://dev.to/kristianpedersen/30daysofelm-day-4-toggle-visibility-1141)
+[Blog posts with great comments at dev.to](https://dev.to/kristianpedersen/30-days-of-elm-intro-2lo2)
 
 *(Edit December 20th 2020: Added section about motivation and ambition)*
 
