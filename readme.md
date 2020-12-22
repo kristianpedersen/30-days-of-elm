@@ -1,16 +1,12 @@
 # 30 days of Elm
 
-Start date: December 17th 2020
-
 ## Blog posts @ dev.to
 
-1. [Range slider value in p tag](https://dev.to/kristianpedersen/30-days-of-elm-1-30-show-range-slider-value-in-p-tag-jdb)
-2. [HTML element for each item in list](https://dev.to/kristianpedersen/30daysofelm-day-2-html-element-for-each-item-in-list-3d20)
-3. [Random checkbox grid](https://dev.to/kristianpedersen/30daysofelm-day-3-random-checkbox-grid-29j5)
-4. [Toggle visibility](https://dev.to/kristianpedersen/30daysofelm-day-4-toggle-visibility-1141)
-5. ["Lights Out" game](https://dev.to/kristianpedersen/30daysofelm-day-5-lights-out-game-4b16)
-
-*(Edit December 20th 2020: Added section about motivation and ambition)*
+1. [Day 1, 17 dec 2020: Range slider value in p tag](https://dev.to/kristianpedersen/30-days-of-elm-1-30-show-range-slider-value-in-p-tag-jdb)
+2. [Day 2, 18 dec 2020: HTML element for each item in list](https://dev.to/kristianpedersen/30daysofelm-day-2-html-element-for-each-item-in-list-3d20)
+3. [Day 3, 19 dec 2020: Random checkbox grid](https://dev.to/kristianpedersen/30daysofelm-day-3-random-checkbox-grid-29j5)
+4. [Day 4, 20 dec 2020: Toggle visibility](https://dev.to/kristianpedersen/30daysofelm-day-4-toggle-visibility-1141)
+5. [Day 5, 21 dec 2020: "Lights Out" game](https://dev.to/kristianpedersen/30daysofelm-day-5-lights-out-game-4b16)
 
 ## About this challenge
 Hi! My name is Kristian. 
