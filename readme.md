@@ -1,6 +1,6 @@
 # 30 days of Elm
 
-[Blog posts @ dev.to](https://dev.to/kristianpedersen/30-days-of-elm-intro-2lo2)
+[Blog posts, great comments and interactive examples @ dev.to](https://dev.to/kristianpedersen/30-days-of-elm-intro-2lo2)
 
 ## About this challenge
 Hi! My name is Kristian. 
