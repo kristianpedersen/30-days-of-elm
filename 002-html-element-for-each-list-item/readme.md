@@ -1,8 +1,6 @@
 # 2/30 Return HTML for each list item
 
-Code: https://github.com/kristianpedersen/30-days-of-elm/blob/main/002-html-element-for-each-list-item/src/Main.elm
-
-Demo: https://kristianpedersen.github.io/30-days-of-elm/002-html-element-for-each-list-item/
+Code + demo: https://ellie-app.com/bS7Gr4mBws5a1
 
 This is day 2 of my [30 day Elm challenge](https://dev.to/kristianpedersen/30-days-of-elm-intro-2lo2)
 

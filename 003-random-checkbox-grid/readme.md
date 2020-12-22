@@ -1,10 +1,9 @@
+
 This is day 3 of my [30 day Elm challenge](https://dev.to/kristianpedersen/30-days-of-elm-intro-2lo2)
 
 Today I'm making a 10x10 grid of checkboxes, which will be randomly checked when I click a button.
 
-Code: https://github.com/kristianpedersen/30-days-of-elm/blob/main/003-random-checkbox-grid/src/Main.elm
-
-Demo: https://kristianpedersen.github.io/30-days-of-elm/003-random-checkbox-grid/
+Code + demo: https://ellie-app.com/bS7HnJxj2Gwa1
 
 I started out by prototyping it in React. Turns out it's really fun to watch random checkboxes!
 

@@ -1,8 +1,6 @@
 This is day 4 of my [30 day Elm challenge](https://dev.to/kristianpedersen/30-days-of-elm-intro-2lo2)
 
-Code: https://github.com/kristianpedersen/30-days-of-elm/blob/main/004-toggle-visibility/src/Main.elm
-
-Demo: https://kristianpedersen.github.io/30-days-of-elm/004-toggle-visibility/
+Code + demo: https://ellie-app.com/bS7JHCymbpZa1
 
 My only goal today was to publish my three previous Elm projects as interactive web pages - not just their source code.
 
@@ -15,6 +13,11 @@ This was super easy!
 All subfolders in my repo now have a URL in this format: `https://kristianpedersen.github.io/30-days-of-elm/[folder-name]`, showing `index.html` if it exists, or `readme.md`.
 
 The only downside is that the generated HTML files are thousands of lines long, but they work fine, and there's some interesting and confusing stuff going on in them.
+
+*Edit 22nd december 2020: I'm hosting the demos on ellie-app.com instead. The GitHub repo just includes the Elm source code.*
+
+1. Ellie allows you to modify the code and see the result.
+2. GitHub doesn't get filled up with huge HTML files.
 
 # Code project: Toggle visibility with checkbox
 
