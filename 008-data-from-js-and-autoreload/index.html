@@ -1,0 +1,29 @@
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Main</title>
+	<script src="main.js"></script>
+</head>
+
+<body>
+	<div id="myapp"></div>
+	<script>
+		const d = new Date()
+		const isXmas = d.getDate() === 24 && d.getMonth() === 11 // Jeez, at least make it consistent :D
+
+		var app = Elm.Main.init({
+			node: document.getElementById('myapp'),
+			flags: {
+				isXmas,
+				santaMsg: "Merry Christmas!",
+				rnd42: [...Array(1000)]
+					.map(n => Math.random() * 1000)
+					.map(Math.floor)
+					.filter(n => n % 42 === 0 && n !== 0)
+			}
+		});
+	</script>
+</body>
+
+</html>
