@@ -2,14 +2,22 @@ This is day 8 of my [30 day Elm challenge](https://dev.to/kristianpedersen/30-da
 
 Merry Christmas!
 
-Today we're getting some data from JavaScript, using `flags`.
+Today's project consists of two things, really:
+1. Setting up auto-reload of `elm make ...` and browser auto-reload of `index.html`.
+2. Getting some values from JavaScript, using `flags`.
+
+This can be useful if you want to create some dummy data with a couple of your JavaScript tricks.
+
+* Plain text result: https://kristianpedersen.github.io/30-days-of-elm/008-data-from-js-and-autoreload/
+* Elm source: https://github.com/kristianpedersen/30-days-of-elm/blob/main/008-data-from-js-and-autoreload/src/Main.elm
+* JS source: https://github.com/kristianpedersen/30-days-of-elm/blob/main/008-data-from-js-and-autoreload/index.html
 
 For the most part, I've just followed this guide: https://guide.elm-lang.org/interop/flags.html
 
 - [Getting up and running](#getting-up-and-running)
 - [Setup](#setup)
-	- [1. Automatically run "elm make ..." on save](#1-automatically-run-elm-make--on-save)
-	- [2. Automatic browser reload with live-server](#2-automatic-browser-reload-with-live-server)
+  - [1. Automatically run "elm make ..." on save](#1-automatically-run-elm-make--on-save)
+  - [2. Automatic browser reload with live-server](#2-automatic-browser-reload-with-live-server)
 - [1. Create the HTML file, and add static data](#1-create-the-html-file-and-add-static-data)
 - [2. Setup, subscriptions](#2-setup-subscriptions)
 - [3. Model](#3-model)
@@ -17,7 +25,7 @@ For the most part, I've just followed this guide: https://guide.elm-lang.org/int
 - [5. View](#5-view)
 
 # Getting up and running
-In previous projects, I've used [elm reactor](https://guide.elm-lang.org/install/elm.html) and gone to `http://localhost:8000/src/Main.elm`.
+In previous projects, I've used [elm reactor](https://guide.elm-lang.org/install/elm.html) and visited `http://localhost:8000/src/Main.elm`.
 
 Today, we need to generate a JavaScript file, and reference it in an `index.html` file.
 
@@ -67,14 +75,14 @@ The `flags` object is the stuff that gets sent to Elm, which you can see here:
 	<div id="myapp"></div>
 	<script>
 		const d = new Date()
-		const isChristmas = d.getDate() === 24 && d.getMonth() === 11 // lol wtf
+		const isXmas = d.getDate() === 24 && d.getMonth() === 11 // lol wtf
 
 		var app = Elm.Main.init({
 			node: document.getElementById('myapp'),
 			flags: {
-				isChristmas,
-				messageFromSanta: "Merry Christmas!",
-				randomNumbersDivisibleBy42: [...Array(1000)]
+				isXmas,
+				santaMsg: "Merry Christmas!",
+				rnd42: [...Array(1000)]
 					.map(n => Math.random() * 1000)
 					.map(Math.floor)
 					.filter(n => n % 42 === 0 && n !== 0)
