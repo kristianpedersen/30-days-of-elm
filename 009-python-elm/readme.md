@@ -10,6 +10,19 @@ Raw data: https://elmspacekp.herokuapp.com/info
 
 Note: The 25th isn't a very big deal in Norway. We celebrated yesterday! :)
 
+# Table of contents
+
+- [About today's project](#about-todays-project)
+- [Table of contents](#table-of-contents)
+- [Background](#background)
+- [0. Deployment is confusing](#0-deployment-is-confusing)
+- [1. The Python program](#1-the-python-program)
+  - [1.1 Simple example](#11-simple-example)
+  - [1.2 Imports and setup](#12-imports-and-setup)
+  - [1.3 Serve Elm client](#13-serve-elm-client)
+  - [1.4 Get planet data](#14-get-planet-data)
+- [2. Elm client](#2-elm-client)
+
 # Background
 
 A while back, I made a Python program that uses `astropy` to get the planets' exact distances from Earth at the current time. 
