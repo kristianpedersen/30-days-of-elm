@@ -16,6 +16,14 @@ Note: The 25th isn't a very big deal in Norway. We celebrated yesterday! :)
 - [Table of contents](#table-of-contents)
 - [Background](#background)
 - [0. Deployment is confusing](#0-deployment-is-confusing)
+  - [0.1 Heroku](#01-heroku)
+  - [0.2 render.com](#02-rendercom)
+    - [0.2.1 Folder structure](#021-folder-structure)
+      - [Root](#root)
+      - [/static](#static)
+      - [/templates](#templates)
+      - [Elm file contents](#elm-file-contents)
+    - [0.2.2 Deployment](#022-deployment)
 - [1. The Python program](#1-the-python-program)
   - [1.1 Simple example](#11-simple-example)
   - [1.2 Imports and setup](#12-imports-and-setup)
@@ -35,6 +43,8 @@ Today, the goal is to just get the Python data into Elm.
 
 # 0. Deployment is confusing
 
+## 0.1 Heroku
+
 Man, this was harder than expected.
 
 Once I finally did get it up and working on Heroku, I tried doing it again just to be sure, and couldn't get the Python part working on the 2nd URL.
@@ -44,6 +54,75 @@ I would love to have a nice step-by-step list to let you know how I did finally 
 I don't know if I'm confused by Heroku or Python, but it's such a weird feeling to have something working fine on my machine, and failing just because I run it somewhere else.
 
 Is this what Docker solves?
+
+*Edit 26th of december: Used render.com instead*
+
+## 0.2 render.com
+
+Firstly, lots of people really like Heroku, but I just can't figure out how to get my project working on it.
+
+I got yesterday's project working somehow, except when I tried a second time, the front-end responded, but the `/info` endpoint didn't. I'm sure there's a simple solution, but I'd much rather move on for now.
+
+Looking around for alternatives, I came across Render. It's only free for static sites unfortunately, but I had my full Flask+Elm project up and running in a couple of minutes.
+
+GUI: https://test-lo7b.onrender.com/
+Data: https://test-lo7b.onrender.com/info
+
+https://render.com/docs/deploy-flask
+
+### 0.2.1 Folder structure
+
+#### Root
+
+In the root folder, there are two important files: `app.py` and `requirements.txt`.
+
+The requirements file lists the packages we need:
+```
+Flask
+Gunicorn
+astropy
+jplephem
+```
+
+Flask is a "lightweight WSGI web application framework". It's going to provide `index.html` when visiting "/", and the astronomy data when visiting "/info.
+
+Gunicorn: Web Server Gateway Interface (WSGI) server implementation that is commonly used to run Python web applications.
+
+Astropy and Jplephem are needed to get astronomy data.
+
+#### /static
+
+This is where you put files that are referenced by `index.html`, such as JS, CSS, images, etc.
+
+For this project, this is the destination of our `elm make` command.
+
+#### /templates
+
+This is where `index.html` lives. I just copied it from "Embedding in HTML" here: https://guide.elm-lang.org/interop/
+
+This is also where I put my Elm code, since it doesn't need to be available via a URL.
+
+The command I used was `elm make src/Main.elm --output=../static/main.js`
+
+#### Elm file contents
+
+Almost the same as https://guide.elm-lang.org/effects/http.html, except the url is simply "/info".
+
+More on this under heading "2. Elm client".
+
+### 0.2.2 Deployment
+
+Create a new repo on GitHub, and then in the root folder:
+
+* `git init`
+* `git add .`
+* `git commit -m "blabla"`
+* `git remote add ...` <!-- This will be written when you first create a new repo -->
+* `git push origin main` <!-- Or "master". Confusing, I know. -->
+
+Then on Render, you just paste the URL of your repo, and you're done.
+
+Here's my repo: https://github.com/kristianpedersen/flask-hello-world 
 
 # 1. The Python program
 
@@ -316,4 +395,4 @@ view model =
             pre [] [ text fullText ]
 ```
 
-I'm really tired from all the confusion today, so please excuse me while I go to bed. :D
+I'm really tired from all the confusion today, so please excuse me while I go to bed immediately. :D
