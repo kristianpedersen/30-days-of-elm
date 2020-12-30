@@ -6,18 +6,18 @@ Demo: https://ellie-app.com/bVDMsDcTnXMa1
 - [About today's project](#about-todays-project)
 - [0. Automatic reload with elm-live](#0-automatic-reload-with-elm-live)
 - [1. Int -> Next higher number with same 1 bits](#1-int---next-higher-number-with-same-1-bits)
-	- [1.1 What are binary numbers?](#11-what-are-binary-numbers)
-	- [1.2 Converting from int to binary](#12-converting-from-int-to-binary)
-		- [1.2.1 JavaScript prototyping with Quokka](#121-javascript-prototyping-with-quokka)
-		- [1.2.2 How many bits is the number?](#122-how-many-bits-is-the-number)
-		- [1.2.3 Generate bits](#123-generate-bits)
-		- [1.2.4 Generate binary number](#124-generate-binary-number)
-	- [1.3 Converting from binary to int](#13-converting-from-binary-to-int)
-	- [1.4 Finding corresponding binary numbers](#14-finding-corresponding-binary-numbers)
-		- [1.4.1 Same number of 1 bits](#141-same-number-of-1-bits)
-		- [1.4.2 Get all numbers with the same or +1 number of bits](#142-get-all-numbers-with-the-same-or-1-number-of-bits)
-		- [1.4.3 Get the next binary number with the same number of 1's](#143-get-the-next-binary-number-with-the-same-number-of-1s)
-	- [2. Conclusion](#2-conclusion)
+  - [1.1 What are binary numbers?](#11-what-are-binary-numbers)
+  - [1.2 Converting from int to binary](#12-converting-from-int-to-binary)
+    - [1.2.1 JavaScript prototyping with Quokka](#121-javascript-prototyping-with-quokka)
+    - [1.2.2 How many bits is the number?](#122-how-many-bits-is-the-number)
+    - [1.2.3 Generate bits](#123-generate-bits)
+    - [1.2.4 Generate binary number](#124-generate-binary-number)
+  - [1.3 Converting from binary to int](#13-converting-from-binary-to-int)
+  - [1.4 Finding corresponding binary numbers](#14-finding-corresponding-binary-numbers)
+    - [1.4.1 Same number of 1 bits](#141-same-number-of-1-bits)
+    - [1.4.2 Get all numbers with the same or +1 number of bits](#142-get-all-numbers-with-the-same-or-1-number-of-bits)
+    - [1.4.3 Get the next binary number with the same number of 1's](#143-get-the-next-binary-number-with-the-same-number-of-1s)
+  - [2. Conclusion](#2-conclusion)
 
 Today, I got inspired by a codewars.com kata (simple programming task).
 
@@ -48,7 +48,7 @@ Then, in two separate terminals in the project root:
 Today however, I discovered `elm-live`, which lets you achieve the same result without needing to do create an HTML file and compile Main.elm.
 
 1. Install: `npm i -g elm-live`
-2. In project root: `elm-live`
+2. In project root: `elm-live src/Main.elm`
 3. Go to http://localhost:8000/
 
 # 1. Int -> Next higher number with same 1 bits
