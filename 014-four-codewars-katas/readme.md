@@ -10,18 +10,18 @@ I did the two first ones on day 11. The third one was the one about finding the 
 
 The next two were done today, prototyped with JavaScript + [Quokka in VS Code](https://marketplace.visualstudio.com/items?itemName=WallabyJs.quokka-vscode).
 
-Just like with the Elm compiler, it feels great when the CodeWars katas finally compile, and it's fun to see how other people solved the same problem.
+Just like with the Elm compiler, it feels great when the CodeWars katas finally pass the tests, and it's fun to see how other people solved the same problem.
 
 - [Background](#background)
 - [1. Square every digit](#1-square-every-digit)
 - [2. Repeat each character index+1 times](#2-repeat-each-character-index1-times)
 - [3. Balanced number](#3-balanced-number)
-	- [3.1 JavaScript solution](#31-javascript-solution)
-	- [3.2 Elm solution](#32-elm-solution)
+  - [3.1 JavaScript solution](#31-javascript-solution)
+  - [3.2 Elm solution](#32-elm-solution)
 - [4. Circle of numbers](#4-circle-of-numbers)
-	- [4.1 JavaScript solution](#41-javascript-solution)
-	- [4.2 Elm solution](#42-elm-solution)
-	- [4.3 One-liner](#43-one-liner)
+  - [4.1 JavaScript solution](#41-javascript-solution)
+  - [4.2 Elm solution](#42-elm-solution)
+  - [4.3 One-liner](#43-one-liner)
 - [5. Summary](#5-summary)
 
 # 1. Square every digit
