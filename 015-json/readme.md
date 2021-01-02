@@ -6,7 +6,9 @@ There's no finished code today, and I feel like I'm fumbling around blindly to b
 
 I've learned a couple of new concepts though, so this isn't a failure at all. :)
 
-Here is today's mess if you're interested: 
+Here is today's unfinished non-working code if you're interested: https://github.com/kristianpedersen/30-days-of-elm/tree/main/015-json
+
+In one terminal, run `pyhton3 app.py`, and in another one, navigate to `templates` and run `elm-live src/Main.elm` (`npm install -g elm-live` first)
 
 # 0. Simple example
 
