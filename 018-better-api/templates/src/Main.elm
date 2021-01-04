@@ -85,13 +85,11 @@ update msg model =
         GetPlanets ->
             ( Loading, fetchPlanets )
 
-        PlanetRequest result ->
-            case result of
-                Ok planetData ->
-                    ( Success planetData, Cmd.none )
+        PlanetRequest (Ok planetData) ->
+            ( Success planetData, Cmd.none )
 
-                Err errorMessage ->
-                    ( Failure (errorMessage |> Debug.toString), Cmd.none )
+        PlanetRequest (Err errorMessage) ->
+            ( Failure (errorMessage |> Debug.toString), Cmd.none )
 
 
 

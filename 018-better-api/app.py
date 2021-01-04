@@ -23,7 +23,7 @@ current_time = Time(Time.now())
 location = EarthLocation.of_site('greenwich')
 
 
-def convert_km_to_light_minutes(distance):
+def to_light_minutes(distance):
     return (distance.to(u.lightyear).value * (1 * u.year).to(u.min)).value
 
 
@@ -43,7 +43,7 @@ def get_xyz(p):
     Y = (C * math.cos(B)) * math.sin(A)
     Z = C * math.sin(B)
 
-    return (X * 1_000_000, Y * 1_000_000, Z * 1_000_000)
+    return (X, Y, Z)
 
 
 @app.route('/info')
@@ -56,21 +56,21 @@ def get_planet_info():
 
             planet_info.append({
                 "name": planet_name,
-                "lightMinutes": convert_km_to_light_minutes(planet.distance),
+                "lightMinutes": to_light_minutes(planet.distance),
                 "xyz": get_xyz(planet)
             })
 
         sun = get_sun(current_time)
         planet_info.append({
             "name": "The Sun",
-            "lightMinutes": convert_km_to_light_minutes(sun.distance),
+            "lightMinutes": to_light_minutes(sun.distance),
             "xyz": get_xyz(sun)
         })
 
         moon = get_moon(current_time)
         planet_info.append({
             "name": "The Moon",
-            "lightMinutes": convert_km_to_light_minutes(moon.distance),
+            "lightMinutes": to_light_minutes(moon.distance),
             "xyz": get_xyz(moon)
         })
 

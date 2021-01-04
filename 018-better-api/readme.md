@@ -1,18 +1,46 @@
 This is day 18 of my [30 day Elm challenge](https://dev.to/kristianpedersen/30-days-of-elm-intro-2lo2)
 
+# Table of contents
+
+- [Table of contents](#table-of-contents)
+- [About today's project](#about-todays-project)
+  - [Code](#code)
+  - [Thanks!](#thanks)
+  - [Ideas](#ideas)
+- [1. Connecting the front-end and back-end](#1-connecting-the-front-end-and-back-end)
+- [2. Elm code](#2-elm-code)
+  - [2.1 Imports, main and subscriptions](#21-imports-main-and-subscriptions)
+  - [2.2 Model](#22-model)
+  - [2.3 Requests and planetDecoder](#23-requests-and-planetdecoder)
+  - [2.4 Update](#24-update)
+  - [2.5 View](#25-view)
+    - [2.5.1 Show one planet](#251-show-one-planet)
+    - [2.5.2 Show all planets (or error)](#252-show-all-planets-or-error)
+    - [2.5.3 View](#253-view)
+- [3. Things others say about JSON in Elm](#3-things-others-say-about-json-in-elm)
+  - [3.1 JSON in Elm is different](#31-json-in-elm-is-different)
+  - [3.2 JSON decoders in Elm are an important concept](#32-json-decoders-in-elm-are-an-important-concept)
+- [4. Conclusion](#4-conclusion)
+
 # About today's project
 
 With some excellent help along the way, I've finally decoded some JSON from my Python backend in Elm, and deployed it:
 
-Demo: 
+## Code
 
-Repo: 
+Demo: https://elm-decode-json-from-python-backend.onrender.com/
+
+Backend: https://github.com/kristianpedersen/json-elm-astropy-python/blob/main/app.py
+
+Frontend: https://github.com/kristianpedersen/json-elm-astropy-python/blob/main/templates/src/Main.elm
+
+## Thanks!
 
 Writing down and sharing my learning experience has been a great decision. Just look at the level of encouragement and helpfulness I got on [yesterday's post](https://dev.to/kristianpedersen/30daysofelm-day-17-i-decoded-some-json-4na5).
 
 Just like before, Bukkfrig's comments and code really help make sense of things. Thank you so much!
 
-# Ideas
+## Ideas
 
 Now I can finally start thinking about what to do with this data. Some ideas:
 * A wall of digital clocks, showing at which time a planet's light was emitted. In other words, how far back in time are you seeing when observing the planet? Here's a good starting point for that: https://guide.elm-lang.org/effects/time.html
@@ -66,7 +94,7 @@ After:
 ]}
 ```
 
-# 2. Code
+# 2. Elm code
 
 ## 2.1 Imports, main and subscriptions
 
@@ -271,7 +299,7 @@ I think the last one is easier to read, since I know where `name` and `lightMinu
 
 The first example is fine, since the type annotation lets me know what these things are coming from, but I think the last example is better.
 
-## 2.5.2 Show all planets (or error)
+### 2.5.2 Show all planets (or error)
 
 This function doesn't only show planets, so I think it should be renamed. Maybe `viewModel` or `viewCurrentState`?
 
