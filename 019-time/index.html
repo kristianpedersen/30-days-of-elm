@@ -4415,6 +4415,43 @@ function _Time_getZoneName()
 		callback(_Scheduler_succeed(name));
 	});
 }
+
+
+
+var _Bitwise_and = F2(function(a, b)
+{
+	return a & b;
+});
+
+var _Bitwise_or = F2(function(a, b)
+{
+	return a | b;
+});
+
+var _Bitwise_xor = F2(function(a, b)
+{
+	return a ^ b;
+});
+
+function _Bitwise_complement(a)
+{
+	return ~a;
+};
+
+var _Bitwise_shiftLeftBy = F2(function(offset, a)
+{
+	return a << offset;
+});
+
+var _Bitwise_shiftRightBy = F2(function(offset, a)
+{
+	return a >> offset;
+});
+
+var _Bitwise_shiftRightZfBy = F2(function(offset, a)
+{
+	return a >>> offset;
+});
 var $elm$core$Basics$EQ = {$: 'EQ'};
 var $elm$core$Basics$GT = {$: 'GT'};
 var $elm$core$Basics$LT = {$: 'LT'};
@@ -5663,6 +5700,33 @@ var $author$project$Main$update = F2(
 		}
 	});
 var $elm$html$Html$h1 = _VirtualDom_node('h1');
+var $elm$core$String$cons = _String_cons;
+var $elm$core$String$fromChar = function (_char) {
+	return A2($elm$core$String$cons, _char, '');
+};
+var $elm$core$Bitwise$and = _Bitwise_and;
+var $elm$core$Bitwise$shiftRightBy = _Bitwise_shiftRightBy;
+var $elm$core$String$repeatHelp = F3(
+	function (n, chunk, result) {
+		return (n <= 0) ? result : A3(
+			$elm$core$String$repeatHelp,
+			n >> 1,
+			_Utils_ap(chunk, chunk),
+			(!(n & 1)) ? result : _Utils_ap(result, chunk));
+	});
+var $elm$core$String$repeat = F2(
+	function (n, chunk) {
+		return A3($elm$core$String$repeatHelp, n, chunk, '');
+	});
+var $elm$core$String$padLeft = F3(
+	function (n, _char, string) {
+		return _Utils_ap(
+			A2(
+				$elm$core$String$repeat,
+				n - $elm$core$String$length(string),
+				$elm$core$String$fromChar(_char)),
+			string);
+	});
 var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
 var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
 var $elm$time$Time$flooredDiv = F2(
@@ -5729,18 +5793,26 @@ var $elm$time$Time$toMinute = F2(
 	});
 var $author$project$Main$view = function (model) {
 	var lightMinutes = 75;
-	var newMinutes = $elm$core$String$fromInt(
-		$elm$core$Basics$floor(lightMinutes) % 60);
 	var currentMinute = A2($elm$time$Time$toMinute, model.zone, model.time);
 	var currentHour = A2($elm$time$Time$toHour, model.zone, model.time);
-	var newHours = $elm$core$String$fromInt(
-		currentHour - $elm$core$Basics$floor(lightMinutes / 60));
+	var newMinutes = ((currentHour * 60) + currentMinute) - lightMinutes;
+	var h = A3(
+		$elm$core$String$padLeft,
+		2,
+		_Utils_chr('0'),
+		$elm$core$String$fromInt(
+			$elm$core$Basics$floor(newMinutes / 60)));
+	var m = A3(
+		$elm$core$String$padLeft,
+		2,
+		_Utils_chr('0'),
+		$elm$core$String$fromInt(newMinutes % 60));
 	return A2(
 		$elm$html$Html$h1,
 		_List_Nil,
 		_List_fromArray(
 			[
-				$elm$html$Html$text(newHours + (':' + newMinutes))
+				$elm$html$Html$text(h + (':' + m))
 			]));
 };
 var $author$project$Main$main = $elm$browser$Browser$element(

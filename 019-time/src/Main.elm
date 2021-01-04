@@ -84,10 +84,17 @@ view model =
         currentMinute =
             Time.toMinute model.zone model.time
 
-        newHours =
-            currentHour - floor (lightMinutes / 60) |> String.fromInt
-
         newMinutes =
-            remainderBy 60 (floor lightMinutes) |> String.fromInt
+            (currentHour * 60) + currentMinute - lightMinutes
+
+        h =
+            floor (toFloat newMinutes / 60)
+                |> String.fromInt
+                |> String.padLeft 2 '0'
+
+        m =
+            remainderBy 60 newMinutes
+                |> String.fromInt
+                |> String.padLeft 2 '0'
     in
-    h1 [] [ text <| newHours ++ ":" ++ newMinutes ]
+    h1 [] [ text <| h ++ ":" ++ m ]

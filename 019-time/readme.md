@@ -2,7 +2,16 @@ This is day 19 of my [30 day Elm challenge](https://dev.to/kristianpedersen/30-d
 
 # Table of contents
 
+- [Table of contents](#table-of-contents)
+- [1. About today's project](#1-about-todays-project)
+- [2. Time in Elm](#2-time-in-elm)
+- [3. What is different from the example code?](#3-what-is-different-from-the-example-code)
+  - [3.1 View](#31-view)
+- [4. Summary](#4-summary)
+
 # 1. About today's project
+
+https://ellie-app.com/bZcnMkJZvrVa1
 
 The main piece of information I want to convey in this project is distance and time.
 
@@ -56,29 +65,42 @@ view model =
         currentMinute =
             Time.toMinute model.zone model.time
 
-        newHours =
-            currentHour - floor (lightMinutes / 60) |> String.fromInt
-
         newMinutes =
-            remainderBy 60 (floor lightMinutes) |> String.fromInt
+            (currentHour * 60) + currentMinute - lightMinutes
+
+        h =
+            floor (toFloat newMinutes / 60)
+                |> String.fromInt
+                |> String.padLeft 2 '0'
+
+        m =
+            remainderBy 60 newMinutes
+                |> String.fromInt
+                |> String.padLeft 2 '0'
     in
-    h1 [] [ text <| newHours ++ ":" ++ newMinutes ]
+    h1 [] [ text <| h ++ ":" ++ m ]
 ```
 
 `currentHour` and `currentMinute` look different from JavaScript, but I think it's pretty clear what they do.
 
 As I'm writing this, the time is 17:50. A time difference of 75 minutes means we should get `16` for the hours and `35` for the minutes.
 
-To convert minutes to hours, we do `minutes / 60` and floor it.
+To get the new time, we can first find out how many minutes have passed today since midnight. 
 
-To get the minutes, we can just take `remainderBy 60 75` (`75 % 60` in JavaScript) and get 15.
+If we're sticking with 17:50, the total number of minutes would be ((17 * 60) + 50). We then subtract the lightminutes from that number.
 
-The reason I'm flooring the lightMinutes in `newMinutes` is because Elm's `remainderBy` function only accepts `Int`s. 
+* 17 * 60 + 50 = 1070
+* We subtract 75 minutes, which is 995.
+* `floor 995 / 60` = 16
+* `remainderBy 60 995` = 35
+* The new time is 16:35
 
-It's precise enough for this case, and otherwise I could have gotten the decimal part by doing `lightMinutes - (floor lightMinutes)`.
-
-The full example code can be found here: []
+If the number is less than 10, we use `String.padLeft` to add a 0. Make sure to wrap the 0 character in single quotes, or Elm will think it's a character, not a string.
 
 # 4. Summary
 
-I had hoped this would be a simple exercise, and I was right. This will be very useful later on. See you tomorrow!
+I had hoped this would be a simple exercise, and I was right. This will be very useful later on. 
+
+Some funky numbers are displayed the first second, but I'm too tired to fix that now.
+
+See you tomorrow!
