@@ -4,6 +4,15 @@ Today I wanted to do something visual, but I wanted the SVG to fill up the avail
 
 In JavaScript, I can just ask for `innerWidth` and `innerHeight`. In Elm, it's more difficult.
 
+- [1. Getting the browser's width and height](#1-getting-the-browsers-width-and-height)
+- [2. Responding to window resize events](#2-responding-to-window-resize-events)
+- [3. The code](#3-the-code)
+  - [3.1. Model and Msg](#31-model-and-msg)
+  - [3.2. Main and subscription](#32-main-and-subscription)
+  - [3.3. Update](#33-update)
+  - [3.4. View](#34-view)
+- [4. Conclusion](#4-conclusion)
+
 # 1. Getting the browser's width and height
 
 My experience with Elm documentation has been a bit frustrating. The descriptions are often good, and the type annotations help, but there have been a few occasions where just one or two code examples would have helped a lot.
@@ -80,7 +89,7 @@ Also, I decided I needed it to respond to window resize events, which was also c
 
 >Kristian Pedersen  2 hours ago
 
-# Responding to window resize events
+# 2. Responding to window resize events
 
 >Actually, I realized I wanted it to update on window resize. Again, I think I’m almost there, but it’s telling me I need a sub msg, not a cmd msg:
 https://ellie-app.com/bZBqjmgPS9pa1
@@ -101,11 +110,11 @@ oh, and to be clear: the documentation is saying that onResize returns a Sub msg
 
 Thanks for the help and patience, Arkham! You're a legend.
 
-# The code
+# 3. The code
 
 Once all the confusion and going back and forth had settled, my resulting code mostly looks pretty nice, to be honest.
 
-## Model and Msg
+## 3.1. Model and Msg
 
 ```elm
 type alias Model =
@@ -127,7 +136,7 @@ The model is straight forward. Although `GotInitialViewport` and `Resize` look d
 
 I don't really like how this looks. Maybe it would have been cleaner to just do it through [JavaScript interop](https://dev.to/kristianpedersen/30daysofelm-day-8-data-from-js-and-auto-reload-1o4h)?
 
-## Main and subscription
+## 3.2. Main and subscription
 
 ```elm
 main : Program () Model Msg
@@ -158,7 +167,7 @@ That's a pretty chunky main function compared to what I've seen before.
 
 When the task `handleResult` is done, it will return one of those two `Cmd Msg`s in the `let` statement.
 
-## Update
+## 3.3. Update
 
 ```elm
 setCurrentDimensions model ( w, h ) =
@@ -184,7 +193,7 @@ It adds a bit extra overhead to me as a beginner, but I guess it can be nice to 
 
 Again, I don't like my double approach, where I get the width and height two different ways: through a `vp` variable, and through a `( w, h )` tuple. It just feels wrong.
 
-## View
+## 3.4. View
 
 Just displaying some data. A nice ending to a confusing day:
 ```elm
@@ -201,7 +210,7 @@ view model =
         ]
 ```
 
-# Conclusion
+# 4. Conclusion
 
 This is one case where I don't immediately see the benefit in doing it the Elm way, rather than just doing it through JavaScript interop, using `window.eventListener`.
 
