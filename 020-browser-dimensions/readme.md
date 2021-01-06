@@ -4,6 +4,8 @@ Today I wanted to do something visual, but I wanted the SVG to fill up the avail
 
 In JavaScript, I can just ask for `innerWidth` and `innerHeight`. In Elm, it's more difficult.
 
+Code/demo: https://ellie-app.com/bZDy65SqXXFa1
+
 - [1. Getting the browser's width and height](#1-getting-the-browsers-width-and-height)
 - [2. Responding to window resize events](#2-responding-to-window-resize-events)
 - [3. The code](#3-the-code)
