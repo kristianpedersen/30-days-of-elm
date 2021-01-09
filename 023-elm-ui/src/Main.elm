@@ -48,8 +48,14 @@ update msg model =
 
 
 view model =
-    Element.layout []
-        (fullscreenContainer model)
+    Element.layout [] <|
+        column
+            [ width fill, height fill, spacing 0, padding 0 ]
+        <|
+            List.map
+                (\elmUiSection -> elmUiSection model)
+                -- I want to add the "buttons" function to this list, but Elm won't let me because of a type mismatch
+                [ controls, infoText, showBoard ]
 
 
 fullscreenContainer model =
