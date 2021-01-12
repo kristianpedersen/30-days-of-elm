@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Elm + Websockets</title>
+	<script type="text/javascript" src="main.js"></script>
+</head>
+
+<body>
+	<div id="myapp"></div>
+</body>
+
+<script type="text/javascript">
+	const app = Elm.Main.init({
+		node: document.getElementById('myapp')
+	});
+
+	const socket = new WebSocket('ws://localhost:9980');
+
+	app.ports.sendMessage.subscribe(function sendToTD(message) {
+		socket.send(message);
+	});
+
+	socket.addEventListener("message", function receiveFromTD(event) {
+		app.ports.messageReceiver.send(event.data);
+	});
+</script>
+
+</html>
